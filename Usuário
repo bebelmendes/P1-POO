@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class usuario {
+    //atributos
+    String nome;
+    int idade;
+    List<livro> livrosEmprestados;
+
+    //gerar um usuario
+    public usuario(String nome, int idade){
+        this.nome = nome;
+        this.idade = idade;
+        this.livrosEmprestados = new ArrayList<>();
+    }
+
+    //metodos
+    public String verNome() {
+        return nome;
+    }
+
+    public int verIdade() {
+        return idade;
+    }
+
+    public List<livro> verLivrosEmprestados() {
+        return livrosEmprestados;
+    }
+
+    public void pegarLivro(livro livro) {
+        livrosEmprestados.add(livro);
+    }
+
+    public livro devolverLivro(String tituloLivro) {
+        for (livro livro : livrosEmprestados) {
+            if (livro.verTitulo().equals(tituloLivro)) {
+                livrosEmprestados.remove(livro);
+                return livro;
+            }
+        }
+        return null;
+    }
+
+    public int quantidadeLivrosEmprestados() {
+        return livrosEmprestados.size();
+    }
+}
