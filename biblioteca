@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class biblioteca {
+    //atributos
+    List<livro> livrosDiponiveis;
+
+    //gerar a lista
+    public biblioteca() {
+        this.livrosDiponiveis = new ArrayList<>();
+    }
+
+    //metodos
+    public void adicionarLivro(livro livro) {
+        livrosDiponiveis.add(livro);
+    }
+
+    public void removerLivro(livro livro) {
+        livrosDiponiveis.remove(livro);
+    }
+
+    public List<livro> verLivros() {
+        return livrosDiponiveis;
+    }
+
+    public livro buscarLivroPorTitulo(String titulo) {
+        for (livro livro : livrosDiponiveis) {
+            if (livro.verTitulo().equals(titulo)) {
+                return livro;
+            }
+        }
+        return null; 
+    }
+}
