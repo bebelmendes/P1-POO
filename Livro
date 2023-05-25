@@ -1,0 +1,26 @@
+public class livro {
+    //atributos
+    String titulo;
+    String autor;
+    int numPag;
+
+    //gerar um livro
+    public livro(String titulo, String autor, int numPag) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.numPag = numPag;
+    }
+
+    //metodos
+    public String verTitulo() {
+        return titulo;
+    }
+
+    public String verAutor() {
+        return autor;
+    }
+
+    public int verNumPag() {
+        return numPag;
+    }
+}
